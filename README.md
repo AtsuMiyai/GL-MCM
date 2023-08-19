@@ -92,3 +92,14 @@ sh scripts/eval_coco_single.sh
 
 # Acknowledgement 
 This code is based on the implementations of [MCM](https://github.com/deeplearning-wisc/MCM)
+
+
+## Citaiton
+If you find our work interesting or use our code/models, please cite:
+```bibtex
+@article{miyai2023zero,
+  title={Zero-Shot In-Distribution Detection in Multi-Object Settings Using Vision-Language Foundation Models},
+  author={Miyai, Atsuyuki and Yu, Qing and Irie, Go and Aizawa, Kiyoharu},
+  journal={arXiv preprint arXiv:2304.04521},
+  year={2023}
+}
