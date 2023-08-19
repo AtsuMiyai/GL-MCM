@@ -94,7 +94,7 @@ sh scripts/eval_coco_single.sh
 This code is based on the implementations of [MCM](https://github.com/deeplearning-wisc/MCM)
 
 
-## Citaiton
+# Citaiton
 If you find our work interesting or use our code/models, please cite:
 ```bibtex
 @article{miyai2023zero,
