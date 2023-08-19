@@ -66,7 +66,7 @@ GL-MCM
 
 # Quick Start
 
-The main script for evaluating OOD detection performance is `eval_ood_detection.py`. Here are the list of arguments:
+The main script for evaluating OOD detection performance is `eval_id_detection.py`. Here are the list of arguments:
 
 - `--name`: A unique ID for the experiment, can be any string
 - `--score`: The OOD detection score, which accepts any of the following:
