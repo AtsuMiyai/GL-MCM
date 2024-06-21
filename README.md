@@ -121,7 +121,7 @@ The comparison results are as follows:
        <td colspan="13">ViT-B-16</td>
     </tr>
     <tr align="center">
-       <td rowspan="4">GL_MCM (lambda=1.0)</td>
+       <td>GL_MCM (lambda=1.0)</td>
        <td>15.18</td>
        <td>96.71</td>
        <td>30.42</td>
