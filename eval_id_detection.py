@@ -32,6 +32,7 @@ def process_args():
                         choices=['ViT-B/16', 'RN50', 'RN101'], help='which pretrained img encoder to use')
     parser.add_argument('--score', default='MCM', type=str, choices=['MCM', 'L-MCM', 'GL-MCM'], help='score options')
     parser.add_argument('--num_ood_sumple', default=-1, type=int, help="numbers of ood_sumples")
+    parser.add_argument('--lambda_local', default=1.0, type=float, help='weight for local score')
     args = parser.parse_args()
 
     args.CLIP_ckpt_name = args.CLIP_ckpt.replace('/', '_')

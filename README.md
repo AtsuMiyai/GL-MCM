@@ -81,6 +81,7 @@ The main script for evaluating OOD detection performance is `eval_id_detection.p
 - `--CLIP_ckpt`: Specifies the pretrained CLIP encoder to use
   - Accepts: `RN50`, `RN101`, `ViT-B/16`.
 - `--num_ood_sumple`: the number of OOD samples
+- `--lambda_local`: the weight for the local score
 
 The OOD detection results will be generated and stored in  `results/in_dataset/score/CLIP_ckpt_name/`. 
 
@@ -89,6 +90,65 @@ We provide bash scripts:
 ```sh
 sh scripts/eval_coco_single.sh
 ```
+# Zero-shot OOD Detection
+GL-MCM is originally proposed for the Zero-shot ID Detection, but it is also appliable for the Zero-shot OOD Detection.     
+To apply to the Zero-shot OOD Detection, we need to set the value of lambda_local to 0.5.  
+
+The comparison results are as follows:
+- ImageNet-1K
+<table>
+    <tr align="center">
+        <td rowspan="2">Methods</td>
+        <td rowspan="2">Repeat</td>
+        <td colspan="2">iNaturalist</td>
+        <td colspan="2">SUN</td>
+        <td colspan="2">Textures</td>
+        <td colspan="2">Places</td>
+        <td colspan="2">Avg</td>
+    </tr>
+    <tr align="center">
+       <td>FPR95</td>
+       <td>AUROC</td>
+       <td>FPR95</td>
+       <td>AUROC</td>
+       <td>FPR95</td>
+       <td>AUROC</td>
+       <td>FPR95</td>
+       <td>AUROC</td>
+       <td>FPR95</td>
+       <td>AUROC</td>
+    </tr>
+    <tr align="center">
+       <td colspan="13">ViT-B-16</td>
+    </tr>
+    <tr align="center">
+       <td rowspan="4">GL_MCM (lambda=1.0)</td>
+       <td>1</td>
+       <td>15.18</td>
+       <td>96.71</td>
+       <td>30.42</td>
+       <td>93.09</td>
+       <td>38.85</td>
+       <td>89.90</td>
+       <td>57.93</td>
+       <td>83.63</td>
+       <td>35.47</td>
+       <td>90.83</td>
+    </tr>
+    <tr align="center">
+       <td>GL_MCM (lambda=0.5)</td>
+       <td>17.46</td>
+       <td>96.44</td>
+       <td>30.73</td>
+       <td>93.45</td>
+       <td>37.65</td>
+       <td>90.64</td>
+       <td>55.23</td>
+       <td>85.54</td>
+       <td>35.27</td>
+       <td>91.51</td>
+    </tr>
+</table>
 
 # Acknowledgement 
 This code is based on the implementations of [MCM](https://github.com/deeplearning-wisc/MCM)

@@ -130,7 +130,7 @@ def get_ood_scores_clip(args, net, loader, test_labels):
             elif args.score == 'GL-MCM':
                 mcm_global_score = -np.max(smax_global, axis=1)
                 mcm_local_score = -np.max(smax_local, axis=(1, 2, 3))
-                _score.append(mcm_global_score+mcm_local_score)
+                _score.append(mcm_global_score+args.lambda_local*mcm_local_score)
             else:
                 raise NotImplementedError
     return concat(_score)[:len(loader.dataset)].copy()   
