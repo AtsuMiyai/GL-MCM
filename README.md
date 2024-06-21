@@ -101,8 +101,8 @@ The comparison results are as follows:
         <td rowspan="2">Methods</td>
         <td colspan="2">iNaturalist</td>
         <td colspan="2">SUN</td>
-        <td colspan="2">Textures</td>
         <td colspan="2">Places</td>
+        <td colspan="2">Textures</td>
         <td colspan="2">Avg</td>
     </tr>
     <tr align="center">
