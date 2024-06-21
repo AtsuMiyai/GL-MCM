@@ -99,7 +99,6 @@ The comparison results are as follows:
 <table>
     <tr align="center">
         <td rowspan="2">Methods</td>
-        <td rowspan="2">Repeat</td>
         <td colspan="2">iNaturalist</td>
         <td colspan="2">SUN</td>
         <td colspan="2">Textures</td>
@@ -123,7 +122,6 @@ The comparison results are as follows:
     </tr>
     <tr align="center">
        <td rowspan="4">GL_MCM (lambda=1.0)</td>
-       <td>1</td>
        <td>15.18</td>
        <td>96.71</td>
        <td>30.42</td>
