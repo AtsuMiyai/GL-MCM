@@ -94,8 +94,13 @@ sh scripts/eval_coco_single.sh
 GL-MCM is originally proposed for the Zero-shot ID Detection, but it is also appliable for the Zero-shot OOD Detection.     
 To apply to the Zero-shot OOD Detection, we need to set the value of lambda_local to 0.5.  
 
+We provide bash scripts:
+
+```sh
+sh scripts/eval_imagenet_ood_detection.sh
+```
+
 The comparison results are as follows:
-- ImageNet-1K
 <table>
     <tr align="center">
         <td rowspan="2">Methods</td>
