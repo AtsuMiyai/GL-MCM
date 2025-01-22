@@ -109,7 +109,7 @@ This code is based on the implementations of [MCM](https://github.com/deeplearni
 # Citaiton
 If you find our work interesting or use our code/models, please cite:
 ```bibtex
-@article{miyai2023zero,
+@article{miyai2025zero,
   title={GL-MCM: Global and Local Maximum Concept Matching for Zero-Shot Out-of-Distribution Detection},
   author={Miyai, Atsuyuki and Yu, Qing and Irie, Go and Aizawa, Kiyoharu},
   journal={IJCV},
