@@ -95,7 +95,7 @@ We provide bash scripts:
 We provide bash scripts:
 
 ```sh
-sh scripts/eval_imagenet_ood_detection.sh
+sh scripts/eval_imagenet.sh
 ```
 
 ```sh
