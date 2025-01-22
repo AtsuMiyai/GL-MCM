@@ -1,6 +1,6 @@
 # GL-MCM: Global and Local Maximum Concept Matching for Zero-Shot Out-of-Distribution Detection (IJCV2025)
 
-|⚠️ The previous version of this paper is "Zero-Shot In-Distribution Detection in Multi-Object Settings Using Vision-Language Foundation Models". We change the paper title and presentation. However, the methodology of GL-MCM is the same. So, Please enjoy our GL-MCM as before.|
+|⚠️ The previous version of this paper is "Zero-Shot In-Distribution Detection in Multi-Object Settings Using Vision-Language Foundation Models". We change the paper title and paper structure. However, the methodology of GL-MCM is the same. So, Please enjoy our GL-MCM as before.|
 |-----------------------------------------|
 
 
