@@ -1,12 +1,17 @@
-# Zero-Shot In-Distribution Detection in Multi-Object Settings Using Vision-Language Foundation Models 
+# GL-MCM: Global and Local Maximum Concept Matching for Zero-Shot Out-of-Distribution Detection (IJCV2025)
 
-This codebase provides a Pytorch implementation for the paper "Zero-Shot In-Distribution Detection in Multi-Object Settings Using Vision-Language Foundation Models".
+|⚠️ The previous version of this paper is "Zero-Shot In-Distribution Detection in Multi-Object Settings Using Vision-Language Foundation Models". We change the paper title and presentation. However, the methodology of GL-MCM is the same. So, Please enjoy our GL-MCM as before.|
+|-----------------------------------------|
 
-## Novel Task: Zero-Shot ID detection
-![ID_detection](readme_figs/ID_detection.png)
+
+
+ 
+
+This codebase provides a Pytorch implementation for the paper "GL-MCM: Global and Local Maximum Concept Matching for Zero-Shot Out-of-Distribution Detection" (IJCV2025).
 
 ### Abstract
-Extracting in-distribution (ID) images from noisy images scraped from the Internet is an important preprocessing for constructing datasets, which has traditionally been done manually. Automating this preprocessing with deep learning techniques presents two key challenges. First, images should be collected using only the name of the ID class without training on the ID data. Second, as we can see why COCO was created, it is crucial to identify images containing not only ID objects but also both ID and OOD objects as ID images to create robust recognizers. In this paper, we propose a novel problem setting called zero-shot in-distribution (ID) detection, where we identify images containing ID objects as ID images, even if they contain OOD objects, and images lacking ID objects as out-of-distribution (OOD) images without any training. To solve this problem, we present a simple and effective approach, Global-Local Maximum Concept Matching (GL-MCM), based on both global and local visual-text alignments of CLIP features. Extensive experiments demonstrate that GL-MCM outperforms comparison methods on both multi-object datasets and single-object ImageNet benchmarks.
+Zero-shot out-of-distribution (OOD) detection is a task that detects OOD images during inference with only in-distribution (ID) class names. Existing methods assume ID images contain a single, centered object, and do not consider the more realistic multi-object scenarios, where both ID and OOD objects are present. To meet the needs of many users, the detection method must have the flexibility to adapt the type of ID images. To this end, we present Global-Local Maximum Concept Matching (GL-MCM), which incorporates local image scores as an auxiliary score to enhance the separability of global and local visual features. Due to the simple ensemble score function design, GL-MCM can control the type of ID images with a single weight parameter. Experiments on ImageNet and multi-object benchmarks demonstrate that GL-MCM outperforms baseline zero-shot methods and is comparable to fully supervised methods. Furthermore, GL-MCM offers strong flexibility in adjusting the target type of ID images. The code is available via this https URL.
+
 
 ### Illustration
 #### Global-Local Maximum Concept Matching (GL-MCM)
@@ -66,7 +71,7 @@ GL-MCM
 
 # Quick Start
 
-The main script for evaluating OOD detection performance is `eval_id_detection.py`. Here are the list of arguments:
+The main script for evaluating OOD detection performance is `eval_ood_detection.py`. Here are the list of arguments:
 
 - `--name`: A unique ID for the experiment, can be any string
 - `--score`: The OOD detection score, which accepts any of the following:
@@ -87,71 +92,15 @@ The OOD detection results will be generated and stored in  `results/in_dataset/s
 
 We provide bash scripts:
 
-```sh
-sh scripts/eval_coco_single.sh
-```
-# Zero-shot OOD Detection
-GL-MCM is originally proposed for the Zero-shot ID Detection, but it is also appliable for the Zero-shot OOD Detection.     
-To apply to the Zero-shot OOD Detection, we recommend to set the value of lambda_local to 0.5.  
-
 We provide bash scripts:
 
 ```sh
 sh scripts/eval_imagenet_ood_detection.sh
 ```
 
-The comparison results are as follows:
-<table>
-    <tr align="center">
-        <td rowspan="2">Methods</td>
-        <td colspan="2">iNaturalist</td>
-        <td colspan="2">SUN</td>
-        <td colspan="2">Places</td>
-        <td colspan="2">Textures</td>
-        <td colspan="2">Avg</td>
-    </tr>
-    <tr align="center">
-       <td>FPR95</td>
-       <td>AUROC</td>
-       <td>FPR95</td>
-       <td>AUROC</td>
-       <td>FPR95</td>
-       <td>AUROC</td>
-       <td>FPR95</td>
-       <td>AUROC</td>
-       <td>FPR95</td>
-       <td>AUROC</td>
-    </tr>
-    <tr align="center">
-       <td colspan="13">ViT-B-16</td>
-    </tr>
-    <tr align="center">
-       <td>GL_MCM (lambda=1.0)</td>
-       <td>15.18</td>
-       <td>96.71</td>
-       <td>30.42</td>
-       <td>93.09</td>
-       <td>38.85</td>
-       <td>89.90</td>
-       <td>57.93</td>
-       <td>83.63</td>
-       <td>35.47</td>
-       <td>90.83</td>
-    </tr>
-    <tr align="center">
-       <td>GL_MCM (lambda=0.5)</td>
-       <td>17.46</td>
-       <td>96.44</td>
-       <td>30.73</td>
-       <td>93.45</td>
-       <td>37.65</td>
-       <td>90.64</td>
-       <td>55.23</td>
-       <td>85.54</td>
-       <td>35.27</td>
-       <td>91.51</td>
-    </tr>
-</table>
+```sh
+sh scripts/eval_coco_single.sh
+```
 
 # Acknowledgement 
 This code is based on the implementations of [MCM](https://github.com/deeplearning-wisc/MCM)
@@ -161,8 +110,8 @@ This code is based on the implementations of [MCM](https://github.com/deeplearni
 If you find our work interesting or use our code/models, please cite:
 ```bibtex
 @article{miyai2023zero,
-  title={Zero-Shot In-Distribution Detection in Multi-Object Settings Using Vision-Language Foundation Models},
+  title={GL-MCM: Global and Local Maximum Concept Matching for Zero-Shot Out-of-Distribution Detection},
   author={Miyai, Atsuyuki and Yu, Qing and Irie, Go and Aizawa, Kiyoharu},
-  journal={arXiv preprint arXiv:2304.04521},
-  year={2023}
+  journal={IJCV},
+  year={2025}
 }
