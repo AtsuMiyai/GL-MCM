@@ -15,7 +15,7 @@ Zero-shot out-of-distribution (OOD) detection is a task that detects OOD images 
 
 ### Illustration
 #### Global-Local Maximum Concept Matching (GL-MCM)
-![Arch_figure](readme_figs/framework.png)
+![Arch_figure](readme_figs/glmcm.png)
 
 
 
